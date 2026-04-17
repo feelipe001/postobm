@@ -1,0 +1,281 @@
+@font-face {
+    font-family: "Ipiranga Textos";
+    src: url(../fonts/IpirangaTextos-Regular.woff);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Ipiranga Textos";
+    src: url(../fonts/IpirangaTextos-Medium.woff);
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Ipiranga Textos";
+    src: url(../fonts/IpirangaTextos-Bold.woff);
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Ipiranga Textos";
+    src: url(../fonts/IpirangaTextos-Black.woff);
+    font-weight: 800;
+}
+@font-face {
+    font-family: "Ipiranga Titulos";
+    src: url(../fonts/IpirangaTitulos-regular.woff);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Ipiranga Titulos";
+    src: url(../fonts/IpirangaTitulos-Bold_1.woff);
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Ipiranga Titulos";
+    src: url(../fonts/IpirangaTitulos-ExtraBold.woff);
+    font-weight: 800;
+}
+* {
+    box-sizing: border-box;
+}
+h1,h2,h3,p,div,img {
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffd100;
+    font-family: "Ipiranga Textos", Arial, Helvetica, sans-serif;
+}
+.container {
+    max-width: 1920px;
+    padding-inline: 60px;
+    margin: 0 auto;
+}
+.container-img {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.line {
+    background-color: #ffd100;
+    padding-block: 32px;
+}
+.head {
+    margin-bottom: 60px;
+}
+.head img {
+    display: block;
+    width: 100%;
+    border-radius: 0 0 89px 89px;
+}
+
+.passos {
+    text-align: center;
+}
+
+.passos h2 {
+    text-align: center;
+    font-family: "Ipiranga Titulos", Arial, Helvetica, sans-serif;
+    font-size: 82px;
+    font-weight: 900;
+    color: #0045B5;
+    max-width: 28ch;
+    margin: 0 auto 60px auto;
+}
+
+.passos-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    max-width: 1550px;
+    background-color: #0045B5;
+    margin: 0 auto;
+    border-radius: 60px;
+    padding: 60px;
+    margin-bottom: 80px;
+    text-align: left;
+}
+
+.passos-box:first-child {
+    margin-bottom: 50px;
+}
+
+.passos-textos h3 {
+    font-family: "Ipiranga Titulos", Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    color: #ffd100;
+    margin-bottom: 40px;
+}
+
+.passos-textos ul {
+    padding: 0;
+}
+
+.passos-textos ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: #00266E;
+    padding: 20px 50px;
+    border-radius: 30px;
+}
+
+.passos-textos ul li:first-child {
+    margin-bottom: 25px;
+}
+
+.passos-textos ul li p {
+    font-size: 39px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.passos a {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 52px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #0045B5;
+    padding: 20px 80px;
+    border-radius: 28px;
+    margin-bottom: 110px;
+}
+
+.texto-legal {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 21px;
+    color: #0045B5;
+    max-width: 122ch;
+    margin-bottom: 40px;
+}
+
+.postos {
+    background-color: #0045B5;
+    border-radius: 90px 90px 0 0;
+    text-align: center;
+    padding-block: 80px;
+}
+
+.postos p {
+    font-size: 44px;
+    color: #ffffff;
+}
+
+.postos h2 {
+    font-size: 70px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.estados {
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline: 415px;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 40px;
+}
+
+.estados a {
+    display: block;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #0045B5;
+    background-color: #ffd100;
+    padding: 24px 80px;
+    border-radius: 24px;
+}
+
+
+@media (max-width:600px) {
+    .container {
+        padding-inline: 16px;
+    }
+
+    .head img {
+        border-radius: 0 0 12px 12px;
+    }
+
+    .passos h2 {
+        font-size: 32px;
+    }
+
+    .passos-box {
+        flex-wrap: wrap;
+        border-radius: 24px;
+        padding: 24px;
+        gap: 32px;
+        margin-bottom: 32px;
+    }
+
+    .passos-box:first-child {
+        margin-bottom: 24px;
+    }
+
+    .passos-textos h3 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+    .passos-textos ul li {
+        padding: 12px 24px;
+        border-radius: 12px;
+        gap: 12px;
+    }
+
+    .passos-textos ul li:first-child {
+        margin-bottom: 12px;
+    }
+
+    .passos-textos ul li img {
+        width: 20px;
+    }
+
+    .passos-textos ul li p {
+        font-size: 14px;
+    }
+
+    .passos a {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .texto-legal {
+        font-size: 10px;
+        margin-bottom: 12px;
+    }
+
+    .postos {
+        padding: 24px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .postos p {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .postos h2 {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .estados {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-inline: 0;
+    }
+
+    .estados a {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
