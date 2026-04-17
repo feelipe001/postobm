@@ -1,257 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posto Barra Mansa | Oficial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --azul-ipiranga: #1E5AA8;
-            --amarelo-ipiranga: #F2C200;
-            --laranja-ipiranga: #F25C05;
-            --cinza-bg: #F4F4F4; /* Fundo cinza claro para as seções, igual ao Méqui */
-            --branco: #FFFFFF;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posto Barra Mansa</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f25c05;
+  color: white;
+}
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--branco);
-            color: #2D2D2D;
-            line-height: 1.5;
-        }
+.hero {
+  background: url('combo.jpg') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
 
-        /* 1. HEADER CORPORATIVO (Simulando o topo do Méqui) */
-        .main-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background-color: var(--branco);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
+.hero h1 {
+  font-size: 50px;
+  color: #f2c200;
+}
 
-        .logo-placeholder {
-            font-weight: 900;
-            color: var(--azul-ipiranga);
-            font-size: 1.5rem;
-            text-transform: uppercase;
-        }
+.btn {
+  background: #1e5aa8;
+  padding: 15px 25px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+}
 
-        .btn-peça {
-            background-color: var(--laranja-ipiranga);
-            color: var(--branco);
-            padding: 10px 25px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
 
-        /* 2. HERO / MENU DE SEÇÕES (A primeira seção do Méqui) */
-        .hero {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: var(--branco);
-        }
+.cashback {
+  background: #f2c200;
+  color: #000;
+}
 
-        .hero h1 {
-            font-weight: 900;
-            font-size: 2.2rem;
-            color: #2D2D2D;
-            margin-bottom: 40px;
-        }
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
 
-        .menu-sections {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.card {
+  background: #1e5aa8;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+}
 
-        .section-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            width: 100px;
-        }
-
-        .section-icon {
-            width: 60px;
-            height: 60px;
-            background-color: var(--cinza-bg);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-            color: var(--azul-ipiranga);
-            font-size: 1.5rem;
-        }
-
-        .section-item p {
-            color: #2D2D2D;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        /* 3. IMAGEM DO PRODUTO HERO (Como o Big Mac) */
-        .hero-banner {
-            background-color: var(--amarelo-ipiranga);
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .hero-banner img {
-            max-width: 100%;
-            width: 300px; /* Tamanho controlado igual ao Méqui */
-        }
-
-        /* 4. SEÇÃO "FRANCHISE" TEXT (Como o texto McDonald's Brasil) */
-        .franchise-section {
-            padding: 40px 20px;
-            background-color: var(--branco);
-        }
-
-        .franchise-section h2 {
-            font-weight: 900;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        /* 5. SEÇÕES EMPILHADAS (Os Clássicos, Promo, etc) */
-        .stack-section {
-            padding: 40px 20px;
-            background-color: var(--branco);
-            border-bottom: 1px solid var(--cinza-bg);
-        }
-
-        .stack-card {
-            background-color: var(--branco);
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            text-align: left;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .stack-card img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .stack-card h3 { font-weight: 700; margin-bottom: 5px; }
-        .stack-card p { font-size: 0.9rem; color: #666; }
-
-        /* 6. SEÇÃO APP BANNER (Igual ao final do Méqui) */
-        .app-banner {
-            background-color: var(--amarelo-ipiranga);
-            padding: 40px 20px;
-            text-align: center;
-            color: var(--azul-ipiranga);
-            margin-top: 40px;
-        }
-
-        .app-banner h2 { font-weight: 900; margin-bottom: 10px; }
-        .app-banner p { font-weight: 500; font-size: 1.1rem; }
-
-        /* 7. FOOTER CORPORATIVO (Simplificado) */
-        .main-footer {
-            background-color: var(--cinza-bg);
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .footer-links { margin-top: 20px; font-size: 0.8rem; color: #888; }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .stack-card { flex-direction: column; text-align: center; }
-        }
-    </style>
+</style>
 </head>
+
 <body>
 
-    <header class="main-header">
-        <div class="logo-placeholder">PBM</div> <a href="#mapa" class="btn-peça">GPS AGORA</a>
-    </header>
+<div class="hero">
+  <h1>COMBO PERFEITO PRA AGORA</h1>
+  <p>Pare no Posto Barra Mansa e aproveite o melhor da conveniência</p>
+  <a class="btn" href="#">Pedir agora</a>
+</div>
 
-    <section class="hero">
-        <h1>Qual o destino <br>de hoje?</h1>
-        <div class="menu-sections">
-            <a href="#gasolina" class="section-item">
-                <div class="section-icon">⛽</div>
-                <p>Abastecer</p>
-            </a>
-            <a href="#am-pm" class="section-item">
-                <div class="section-icon">🛒</div>
-                <p>Conveniência</p>
-            </a>
-            <a href="#jet-oil" class="section-item">
-                <div class="section-icon">🔧</div>
-                <p>Troca de Óleo</p>
-            </a>
-            <a href="#lava-rapido" class="section-item">
-                <div class="section-icon">🚿</div>
-                <p>Lava Rápido</p>
-            </a>
-        </div>
-    </section>
+<div class="section cashback">
+  <h2>TODA TERÇA TEM DINHEIRO DE VOLTA 💰</h2>
+  <p>Abasteça e receba cashback na hora</p>
+  <a class="btn" href="#">Abastecer agora</a>
+</div>
 
-    <section class="hero-banner">
-        <img src="https://i.ibb.co/5KnQzN0/gas-pump.png" alt="Bomba de Gasolina Premium">
-    </section>
+<div class="section">
+  <h2>Serviços</h2>
+  <div class="cards">
+    <div class="card">⛽ Abastecimento</div>
+    <div class="card">🛢️ Troca de óleo</div>
+    <div class="card">🍔 Conveniência</div>
+    <div class="card">🚗 Lavagem</div>
+  </div>
+</div>
 
-    <section class="franchise-section">
-        <h2>Posto Barra Mansa</h2>
-        <p>A melhor experiência de rodovia na Via Dutra, Km 276.</p>
-    </section>
+<div class="section">
+  <h2>Ofertas</h2>
+  <p>Combo completo por apenas R$17,99</p>
+</div>
 
-    <section class="stack-section">
-        <a href="#gasolina" class="stack-card">
-            <img src="https://images.unsplash.com/photo-1599256629231-1e18d6ff8417?q=80&w=1920" alt="Gasolina Premium">
-            <div>
-                <h3>Os Melhores Combustíveis</h3>
-                <p>Performance e economia para sua viagem com a qualidade Ipiranga.</p>
-            </div>
-        </a>
-    </section>
-
-    <section class="stack-section">
-        <a href="#am-pm" class="stack-card">
-            <img src="https://images.unsplash.com/photo-1579737152063-8758b29c54e0?q=80&w=1920" alt="Conveniência">
-            <div>
-                <h3>Conveniência Completa</h3>
-                <p>O melhor café e lanches da Dutra estão aqui. Parada obrigatória.</p>
-            </div>
-        </a>
-    </section>
-
-    <section class="app-banner">
-        <h2>Seu cashback te espera</h2>
-        <p>Abasteça na terça e receba 8% de volta no App KMV.</p>
-    </section>
-
-    <footer class="main-footer">
-        <div class="logo-placeholder" style="color: #666; font-size: 2rem;">PBM</div>
-        <div class="footer-links">
-            <p>© 2026 Posto Barra Mansa - Gestão por Felipe Ribeiro</p>
-            <p>Sua Rota Premium na Dutra</p>
-        </div>
-    </footer>
+<div class="section">
+  <h2>📍 Barra Mansa</h2>
+  <a class="btn" href="#">Como chegar</a>
+</div>
 
 </body>
 </html>
