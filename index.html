@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto Barra Mansa | Experiência Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul: #1E5AA8;
+            --laranja: #F25C05;
+            --amarelo: #F2C200;
+            --branco: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body { background-color: var(--branco); color: #333; }
+
+        /* SESSÃO 1 - HERO */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(30, 90, 168, 0.7), rgba(30, 90, 168, 0.9)), 
+                        url('https://images.unsplash.com/photo-1563200192-36940608516d?auto=format&fit=crop&q=80&w=1920') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            color: var(--branco);
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span { color: var(--amarelo); }
+
+        .btn-chegar {
+            background-color: var(--laranja);
+            color: var(--branco);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 2px solid var(--amarelo);
+            box-shadow: 0 10px 20px rgba(242, 92, 5, 0.3);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-chegar:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(242, 92, 5, 0.5);
+            background-color: var(--amarelo);
+            color: var(--azul);
+        }
+
+        /* SESSÃO 2 - KMV CASHBACK */
+        .kmv-section {
+            padding: 80px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            background: var(--branco);
+        }
+
+        .kmv-image {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .kmv-text {
+            max-width: 500px;
+        }
+
+        .kmv-text h2 {
+            color: var(--azul);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .badge-cashback {
+            background: var(--amarelo);
+            color: var(--azul);
+            padding: 5px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* SESSÃO 3 - MAPA */
+        .map-section {
+            background: var(--azul);
+            padding: 60px 0 0 0;
+            text-align: center;
+        }
+
+        .map-section h2 {
+            color: var(--branco);
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            border-top: 5px solid var(--amarelo);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .kmv-section { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sua parada <span>Premium</span> na Via Dutra</h1>
+            <p style="color: white; margin-bottom: 30px;">O Posto Barra Mansa oferece conveniência completa e serviços de elite para você e seu veículo.</p>
+            <a href="#mapa" class="btn-chegar">COMO CHEGAR</a>
+        </div>
+    </section>
+
+    <section class="kmv-section">
+        <img src="https://i.ibb.co/m5Z6Hj9/kmv-mockup.jpg" alt="App KMV" class="kmv-image"> <div class="kmv-text">
+            <span class="badge-cashback">EXCLUSIVO</span>
+            <h2>Seu dinheiro de volta com o App KMV</h2>
+            <p>No Posto Barra Mansa, abastecer é investir. Ganhe <strong>8% de cashback</strong> direto no app todas as terças-feiras e troque por descontos ou benefícios na nossa conveniência.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" width="150" style="margin-top: 20px;">
+        </div>
+    </section>
+
+    <section id="mapa" class="map-section">
+        <h2>Estamos no seu caminho</h2>
+        <p style="color: var(--amarelo); margin-bottom: 20px;">Rod. Pres. Dutra, 276 - Barra Mansa, RJ</p>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.052684846387!2d-44.1843577!3d-22.539709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9ea29837a7836d%3A0xc49d01d6706050b4!2sRod.%20Pres.%20Dutra%2C%20276%20-%20Get%C4%B1%C3%BAlio%20Vargas%2C%20Barra%20Mansa%20-%20RJ%2C%2027350-420!5e0!3m2!1spt-BR!2sbr!4v1712950000000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <footer style="background: #15417a; color: white; text-align: center; padding: 20px; font-size: 0.8rem;">
+        © 2026 Posto Barra Mansa - Gestão Audiovisual por FELIPE RIBEIRO
+    </footer>
+
+</body>
+</html>
