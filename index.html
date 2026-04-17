@@ -2,136 +2,256 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Posto Barra Mansa App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto Barra Mansa | Oficial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --azul: #1E5AA8;
-            --amarelo: #F2C200;
-            --laranja: #F25C05;
+            --azul-ipiranga: #1E5AA8;
+            --amarelo-ipiranga: #F2C200;
+            --laranja-ipiranga: #F25C05;
+            --cinza-bg: #F4F4F4; /* Fundo cinza claro para as seções, igual ao Méqui */
             --branco: #FFFFFF;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body, html {
-            height: 100%;
-            overflow: hidden; /* Impede rolagem pra parecer app */
-            background-color: var(--azul);
+        body {
             font-family: 'Montserrat', sans-serif;
+            background-color: var(--branco);
+            color: #2D2D2D;
+            line-height: 1.5;
         }
 
-        .app-container {
+        /* 1. HEADER CORPORATIVO (Simulando o topo do Méqui) */
+        .main-header {
             display: flex;
-            flex-direction: column;
-            height: 100vh;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: var(--branco);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        /* HEADER ESTILO APP */
-        .header {
-            padding: 40px 20px 20px;
-            background: linear-gradient(180deg, rgba(30,90,168,1) 0%, rgba(21,65,122,1) 100%);
-            text-align: center;
-            border-bottom: 4px solid var(--amarelo);
-        }
-
-        .header h1 {
-            color: var(--branco);
+        .logo-placeholder {
+            font-weight: 900;
+            color: var(--azul-ipiranga);
             font-size: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .header h1 span { color: var(--amarelo); }
-
-        /* ÁREA DO MAPA (CORPO DO APP) */
-        .content {
-            flex: 1; /* Ocupa todo o espaço restante */
-            position: relative;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* CARD FLUTUANTE DE AÇÃO */
-        .action-card {
-            position: absolute;
-            bottom: 30px;
-            left: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px;
+        .btn-peça {
+            background-color: var(--laranja-ipiranga);
+            color: var(--branco);
+            padding: 10px 25px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
         }
 
-        .address-text {
-            color: var(--azul);
+        /* 2. HERO / MENU DE SEÇÕES (A primeira seção do Méqui) */
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: var(--branco);
+        }
+
+        .hero h1 {
+            font-weight: 900;
+            font-size: 2.2rem;
+            color: #2D2D2D;
+            margin-bottom: 40px;
+        }
+
+        .menu-sections {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .section-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            width: 100px;
+        }
+
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--cinza-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            color: var(--azul-ipiranga);
+            font-size: 1.5rem;
+        }
+
+        .section-item p {
+            color: #2D2D2D;
             font-size: 0.8rem;
-            margin-bottom: 15px;
             font-weight: 500;
         }
 
-        .btn-app {
-            background-color: var(--laranja);
-            color: var(--branco);
-            display: block;
-            padding: 18px;
-            border-radius: 15px;
+        /* 3. IMAGEM DO PRODUTO HERO (Como o Big Mac) */
+        .hero-banner {
+            background-color: var(--amarelo-ipiranga);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero-banner img {
+            max-width: 100%;
+            width: 300px; /* Tamanho controlado igual ao Méqui */
+        }
+
+        /* 4. SEÇÃO "FRANCHISE" TEXT (Como o texto McDonald's Brasil) */
+        .franchise-section {
+            padding: 40px 20px;
+            background-color: var(--branco);
+        }
+
+        .franchise-section h2 {
+            font-weight: 900;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* 5. SEÇÕES EMPILHADAS (Os Clássicos, Promo, etc) */
+        .stack-section {
+            padding: 40px 20px;
+            background-color: var(--branco);
+            border-bottom: 1px solid var(--cinza-bg);
+        }
+
+        .stack-card {
+            background-color: var(--branco);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            box-shadow: 0 4px 0 #b34404;
-            transition: transform 0.1s;
+            color: inherit;
         }
 
-        .btn-app:active {
-            transform: translateY(3px);
-            box-shadow: 0 1px 0 #b34404;
+        .stack-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
         }
 
-        /* ESTILO DA STATUS BAR (SIMULAÇÃO) */
-        .status-bar {
-            height: 25px;
-            background: var(--azul);
-            width: 100%;
+        .stack-card h3 { font-weight: 700; margin-bottom: 5px; }
+        .stack-card p { font-size: 0.9rem; color: #666; }
+
+        /* 6. SEÇÃO APP BANNER (Igual ao final do Méqui) */
+        .app-banner {
+            background-color: var(--amarelo-ipiranga);
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--azul-ipiranga);
+            margin-top: 40px;
+        }
+
+        .app-banner h2 { font-weight: 900; margin-bottom: 10px; }
+        .app-banner p { font-weight: 500; font-size: 1.1rem; }
+
+        /* 7. FOOTER CORPORATIVO (Simplificado) */
+        .main-footer {
+            background-color: var(--cinza-bg);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-links { margin-top: 20px; font-size: 0.8rem; color: #888; }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .stack-card { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <div class="app-container">
-        <header class="header">
-            <h1>Posto <span>Barra Mansa</span></h1>
-        </header>
+    <header class="main-header">
+        <div class="logo-placeholder">PBM</div> <a href="#mapa" class="btn-peça">GPS AGORA</a>
+    </header>
 
-        <main class="content">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.023450970347!2d-44.1953!3d-22.5404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9ea26330555555%3A0x123456789!2zUm9kLiBQcmVzLiBEdXRyYSwgMjc2IC0gQmFycmEgTWFuc2EsIFJK!5e0!3m2!1spt-BR!2sbr!4v1713300000000" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
+    <section class="hero">
+        <h1>Qual o destino <br>de hoje?</h1>
+        <div class="menu-sections">
+            <a href="#gasolina" class="section-item">
+                <div class="section-icon">⛽</div>
+                <p>Abastecer</p>
+            </a>
+            <a href="#am-pm" class="section-item">
+                <div class="section-icon">🛒</div>
+                <p>Conveniência</p>
+            </a>
+            <a href="#jet-oil" class="section-item">
+                <div class="section-icon">🔧</div>
+                <p>Troca de Óleo</p>
+            </a>
+            <a href="#lava-rapido" class="section-item">
+                <div class="section-icon">🚿</div>
+                <p>Lava Rápido</p>
+            </a>
+        </div>
+    </section>
 
-            <div class="action-card">
-                <p class="address-text">📍 Rod. Pres. Dutra, 276 - Barra Mansa, RJ</p>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=-22.5404,-44.1953" target="_blank" class="btn-app">
-                    INICIAR ROTA NO GPS
-                </a>
+    <section class="hero-banner">
+        <img src="https://i.ibb.co/5KnQzN0/gas-pump.png" alt="Bomba de Gasolina Premium">
+    </section>
+
+    <section class="franchise-section">
+        <h2>Posto Barra Mansa</h2>
+        <p>A melhor experiência de rodovia na Via Dutra, Km 276.</p>
+    </section>
+
+    <section class="stack-section">
+        <a href="#gasolina" class="stack-card">
+            <img src="https://images.unsplash.com/photo-1599256629231-1e18d6ff8417?q=80&w=1920" alt="Gasolina Premium">
+            <div>
+                <h3>Os Melhores Combustíveis</h3>
+                <p>Performance e economia para sua viagem com a qualidade Ipiranga.</p>
             </div>
-        </main>
-    </div>
+        </a>
+    </section>
+
+    <section class="stack-section">
+        <a href="#am-pm" class="stack-card">
+            <img src="https://images.unsplash.com/photo-1579737152063-8758b29c54e0?q=80&w=1920" alt="Conveniência">
+            <div>
+                <h3>Conveniência Completa</h3>
+                <p>O melhor café e lanches da Dutra estão aqui. Parada obrigatória.</p>
+            </div>
+        </a>
+    </section>
+
+    <section class="app-banner">
+        <h2>Seu cashback te espera</h2>
+        <p>Abasteça na terça e receba 8% de volta no App KMV.</p>
+    </section>
+
+    <footer class="main-footer">
+        <div class="logo-placeholder" style="color: #666; font-size: 2rem;">PBM</div>
+        <div class="footer-links">
+            <p>© 2026 Posto Barra Mansa - Gestão por Felipe Ribeiro</p>
+            <p>Sua Rota Premium na Dutra</p>
+        </div>
+    </footer>
 
 </body>
 </html>
